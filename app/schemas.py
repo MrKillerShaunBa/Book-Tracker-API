@@ -40,3 +40,7 @@ class ReadingStatsResponse(BaseModel):
 
 class BookStatus(BookBase):
     status: str = Field(..., example="Not Started/In Progress/Completed")
+
+class TokenOut(BaseModel):
+    access_token: str = Field(..., example="access_token")
+    token_type: str = "bearer"

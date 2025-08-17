@@ -38,7 +38,7 @@ def register_user(user: schemas.UserCreate, db:Session = Depends(get_db)):
     db.refresh(db_user)
     return db_user
 
-@router.post("/login",summary="User Login",description="Login with your username and password to receive a JWT access token.\nSet \"grant_type\" to \"password\", username and password as they are and rest of the fields blank.")
+@router.post("/login",response_model=schemas.TokenOut,summary="User Login",description="Login with your username and password to receive a JWT access token.\nSet \"grant_type\" to \"password\", username and password as they are and rest of the fields blank.")
 def login(form_data: OAuth2PasswordRequestForm = Depends(), db: Session = Depends(get_db)):
     user = db.query(models.User).filter(models.User.username == form_data.username).first()
     if not user or not utils.verify_password(form_data.password, user.password):
