@@ -7,15 +7,15 @@ This is FastAPI based Book Tracker which allows you to save the progress (number
 You can see the hosted Swagger docs [https://book-tracker-api-0ejh.onrender.com/docs](https://book-tracker-api-0ejh.onrender.com/docs).
 
 ## API Routes
-* `POST /auth/register`: Register a new user
-* `POST /auth/login`: Obtain a JWT access token
-* `GET /users/me`: Fetch username and userID of the current user
-* `GET /users/me/stats`: Get the book reading statistics of the current user
-* `GET /books/`: View all the books and their details register by the current user
-* `GET /books/{book_id}`: View the details of a single book using their unique assigned book_id
-* `POST /books/create`: Add the details of a new book to your account
-* `PUT /books/{book_id}`: Log number of pages read of that book
-* `DELETE /books/{book_id}`: Delete the record of a particular book
+* `POST /auth/register`: Create a new user account with a username and password.
+* `POST /auth/login`: Login with your username and password to receive a JWT access token.
+* `GET /users/me`: Retrieve the details of the currently authenticated user.
+* `GET /users/me/stats`: Retrieve statistics about the user's reading progress.
+* `GET /books/`: Retrieve a list of all books added by the current user.
+* `GET /books/{book_id}`: Retrieve the details of a specific book by its ID.
+* `POST /books/create`: Add a new book to your tracking with its Title, Author, and Total Pages.
+* `PUT /books/update/{book_id}`: Update the number of pages read for a specific book.
+* `DELETE /books/delete/{book_id}`: Remove a book from your tracking list by its ID.
 
 ![ss](/assets/ss.png)
 
@@ -40,6 +40,7 @@ You can use the API at `http://127.0.0.1:8000` and the docs at `http://127.0.0.1
 * **Authentication**: JWT
 
 * **Hosting**: Render
+
 
 
 
