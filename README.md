@@ -4,7 +4,7 @@ This is FastAPI based Book Tracker which allows you to save the progress (number
 
 ## Hosted API Docs
 
-You can see the hosted Swagger docs [here]().
+You can see the hosted Swagger docs [https://book-tracker-api-0ejh.onrender.com/docs](https://book-tracker-api-0ejh.onrender.com/docs).
 
 ## API Routes
 * `POST /auth/register`: Register a new user
@@ -38,3 +38,4 @@ You can use the API at `http://127.0.0.1:8000` and the docs at `http://127.0.0.1
 * **Authentication**: JWT
 
 * **Hosting**: Render
+
