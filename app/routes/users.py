@@ -16,7 +16,7 @@ def get_db():
 def get_me(current_user: models.User = Depends(auth.get_current_user)):
     return current_user
 
-@router.get("/me/stats",summary="Get reading statistics",description="Retrieve statistics about the user's reading progress.")
+@router.get("/me/stats", response_model=schemas.ReadingStatsResponse,summary="Get reading statistics",description="Retrieve statistics about the user's reading progress.")
 def my_reading_stats(db: Session = Depends(get_db),current_user: models.User = Depends(auth.get_current_user)):
     base_query = db.query(models.Book).filter(models.Book.owner_id == current_user.id)
     total_books = base_query.count()

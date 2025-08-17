@@ -31,7 +31,7 @@ def get_book(book_id: int, db: Session = Depends(get_db), user: models.User = De
         raise HTTPException(status_code=404, detail="Book not found")
     return book
 
-@router.put("/{book_id}", response_model=schemas.BookOut,summary="Update book progress",description="Update the number of pages read for a specific book. The status will be updated automatically based on the total pages and pages read.")
+@router.put("/{book_id}", response_model=schemas.BookStatus,summary="Update book progress",description="Update the number of pages read for a specific book. The status will be updated automatically based on the total pages and pages read.")
 def update_book(book_id: int, update: schemas.BookUpdate, db: Session = Depends(get_db), user: models.User = Depends(auth.get_current_user)):
     book = db.query(models.Book).filter(models.Book.id == book_id, models.Book.owner_id == user.id).first()
     if not book:
