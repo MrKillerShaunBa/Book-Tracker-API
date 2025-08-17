@@ -1,10 +1,10 @@
 # Book Tracker API
 
-This is FastAPI based Book Tracker which allows you to save the progress (number of pages read) of the books you are reading. It helps to keep a track of the books you have finished, currently reading and not started. My motivation to build this was that I have a large library of books at home and have a hard time remembering where I left a particular book when I didnt use a bookmark. I plan to add a front-end to this in the future.
+This is FastAPI based Book Tracker which allows you to save the progress (number of pages read) of the books you are reading. It helps to keep a track of the books you have finished, are currently reading and have not started. My motivation to build this was that I have a large library of books at home and have a hard time remembering where I left a particular book when I didn't use a bookmark. I plan to add a front-end to this in the future.
 
 ## Hosted API Docs
 
-You can see the hosted Swagger docs [https://book-tracker-api-0ejh.onrender.com/docs](https://book-tracker-api-0ejh.onrender.com/docs).
+You can see the hosted Swagger docs [https://book-tracker-api-0ejh.onrender.com/docs](https://book-tracker-api-0ejh.onrender.com/docs). The docs are customised to the project with example values.
 
 ## API Routes
 * `POST /auth/register`: Create a new user account with a username and password.
@@ -38,8 +38,8 @@ You can use the API at `http://127.0.0.1:8000` and the docs at `http://127.0.0.1
 * **Database**: SQLite, SQLAlchemy and Pydantic
 * **Server**: Uvicorn
 * **Authentication**: JWT
-
 * **Hosting**: Render
+
 
 
 
