@@ -29,7 +29,7 @@ def get_current_user(token: str = Depends(oauth2_scheme), db: Session = Depends(
         raise HTTPException(status_code=401, detail="User not found")
     return user
 
-@router.post("/register",response_model=schemas.UserOut)
+@router.post("/register",response_model=schemas.UserOut,summary="Register a new user",description="Create a new user account with a username and password.")
 def register_user(user: schemas.UserCreate, db:Session = Depends(get_db)):
     hashed_pwd = utils.hash_password(user.password)
     db_user = models.User(username=user.username, password = hashed_pwd)
@@ -38,7 +38,7 @@ def register_user(user: schemas.UserCreate, db:Session = Depends(get_db)):
     db.refresh(db_user)
     return db_user
 
-@router.post("/login")
+@router.post("/login",summary="User Login",description="Login with your username and password to receive a JWT access token.\nSet \"grant_type\" to \"password\", username and password as they are and rest of the fields blank.")
 def login(form_data: OAuth2PasswordRequestForm = Depends(), db: Session = Depends(get_db)):
     user = db.query(models.User).filter(models.User.username == form_data.username).first()
     if not user or not utils.verify_password(form_data.password, user.password):
