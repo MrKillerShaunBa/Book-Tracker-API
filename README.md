@@ -35,10 +35,11 @@ You can use the API at `http://127.0.0.1:8000` and the docs at `http://127.0.0.1
 ## Tech Stack
 
 * **Backend**: Python 3, FastAPI
-* **Database**: SQLite with SQLAlchemy
+* **Database**: SQLite with SQLAlchemy (Pydantic for response formatting)
 * **Server**: Uvicorn
 * **Authentication**: JWT
 * **Hosting**: Render
+
 
 
 
