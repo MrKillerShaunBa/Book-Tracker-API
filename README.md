@@ -16,7 +16,7 @@ You can see the hosted Swagger docs [here]().
 * `POST /books/create`: Add the details of a new book to your account
 * `PUT /books/{book_id}`: Log number of pages read of that book
 * `DELETE /books/{book_id}`: Delete the record of a particular book
-
+![ss](/assets/ss.png)
 ## Setup and Installation
 
 ```bash
@@ -36,4 +36,5 @@ You can use the API at `http://127.0.0.1:8000` and the docs at `http://127.0.0.1
 * **Database**: SQLite, SQLAlchemy and Pydantic
 * **Server**: Uvicorn
 * **Authentication**: JWT
+
 * **Hosting**: Render
